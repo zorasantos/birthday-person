@@ -8,14 +8,7 @@ export class CreateBirthdayPersonUseCase {
     private birthdayPersonRepository: IBirthdayPersonRepository
   ) {}
   async execute(data: ICreateBirthdayPersonRequestDTO) {
-    console.log('data', data)
-    const birthdayPersonAlreadyExist = await this.birthdayPersonRepository.findByName(data.name)
-
-    if(birthdayPersonAlreadyExist) {
-      throw new Error('Aniversariante já cadastrado!')
-    }
-
     const birthdayPerson = new BirthdayPerson(data);
-    await this.birthdayPersonRepository.save(birthdayPerson);
+    return await this.birthdayPersonRepository.save(birthdayPerson);
   }
 }

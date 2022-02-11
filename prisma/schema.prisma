@@ -10,7 +10,7 @@ datasource db {
 model birthdayPerson {
   id      String      @id @default(uuid())
   name    String
-  birth_date DateTime
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  birth_date DateTime @db.Date
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
 }

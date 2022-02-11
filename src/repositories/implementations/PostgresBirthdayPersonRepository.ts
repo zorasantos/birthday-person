@@ -1,15 +1,18 @@
-// import { prismaClient } from "../../database/prismaClient";
+import { PrismaClient } from "@prisma/client";
 import { BirthdayPerson } from "../../entities/BirthdayPerson";
 import { IBirthdayPersonRepository } from "../IBirthdayPersonRepository";
 
 export class PostgresBirthdayPersonRepository implements IBirthdayPersonRepository {
-  private birthdayPersons: BirthdayPerson[] = []
+  constructor(
+    private readonly prisma: PrismaClient
+  ) {}
 
-  async findByName(name: string): Promise<BirthdayPerson> {
-      const birthdayPerson = this.birthdayPersons.find(user => user.name === name)
-      return birthdayPerson!;
-  }
   async save(birthdayPerson: BirthdayPerson): Promise<void> {
-      this.birthdayPersons.push(birthdayPerson)
+      await this.prisma.birthdayPerson.create({
+        data: {
+          name: birthdayPerson.name,
+          birth_date: birthdayPerson.birth_date
+        }
+      })
   }
 }

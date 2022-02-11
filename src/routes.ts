@@ -3,9 +3,7 @@ import { createBirthdayPersonController } from './useCases/CreateBirthdayPerson'
 
 const router = Router()
 
-router.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+const create = createBirthdayPersonController
 
 router.post('/birthdayPerson', (req, res) => {
   return createBirthdayPersonController.handle(req, res);
