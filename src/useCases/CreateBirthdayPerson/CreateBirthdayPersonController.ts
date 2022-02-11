@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { CreateBirthdayPersonUseCase } from "./CreateBirthdayPersonUseCase";
 
-export class CreateBirthdayPersonController {
+class CreateBirthdayPersonController {
   constructor(
     private createBirthdayPersonUseCase: CreateBirthdayPersonUseCase
   ) {}
@@ -23,3 +23,5 @@ export class CreateBirthdayPersonController {
     }
   }
 }
+
+export { CreateBirthdayPersonController }

@@ -1,12 +1,11 @@
-import { prismaClient } from "../../database/prismaClient";
-import { PostgresBirthdayPersonRepository } from "../../repositories/implementations/PostgresBirthdayPersonRepository";
+import { PrismaBirthdayPersonRepository } from "../../repositories/implementations/PrismaBirthdayPersonRepository";
 import { CreateBirthdayPersonController } from "./CreateBirthdayPersonController";
 import { CreateBirthdayPersonUseCase } from "./CreateBirthdayPersonUseCase";
 
-const postgresBirthdayPersonRepository = new PostgresBirthdayPersonRepository(prismaClient)
+const prismaBirthdayPersonRepository = new PrismaBirthdayPersonRepository()
 
 const createBirthdayPersonUseCase = new CreateBirthdayPersonUseCase(
-  postgresBirthdayPersonRepository
+  prismaBirthdayPersonRepository
 )
 
 const createBirthdayPersonController = new CreateBirthdayPersonController(

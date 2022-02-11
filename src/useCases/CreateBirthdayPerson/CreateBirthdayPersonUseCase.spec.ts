@@ -1,21 +1,25 @@
-import { PostgresBirthdayPersonRepository } from '../../repositories/implementations/PostgresBirthdayPersonRepository'
-import { prismaMock } from '../../../singleton'
-test('should create new birthday person ', async () => {
-  const method = new PostgresBirthdayPersonRepository(prismaMock)
+import { BirthdayPerson } from '../../entities/BirthdayPerson'
+import { IBirthdayPersonRepository } from '../../repositories/IBirthdayPersonRepository';
+import { BirthdayPersonRepositoryInMemory } from '../../repositories/in-memory/BirthdayPersonRepositoryInMemory'
+import { CreateBirthdayPersonUseCase } from './CreateBirthdayPersonUseCase'
 
-  const birthdayPerson = {
-    id: "0a9bf762-bd86-4e0f-b96f-e607467ea179",
-    name: 'Rich',
-    birth_date: "2000-02-11T13:03:05.279Z"
+let birthdayPersonRepository: IBirthdayPersonRepository;
+let CreateBirthdayPerson: CreateBirthdayPersonUseCase;
+
+beforeAll(() => {
+  birthdayPersonRepository = new BirthdayPersonRepositoryInMemory();
+  CreateBirthdayPerson = new CreateBirthdayPersonUseCase(birthdayPersonRepository);
+});
+
+test('should create new birthday Person ', async () => {
+
+  const birthdayPerson: BirthdayPerson = {
+    name: 'Birthday Person',
+    birth_date: new Date()
   }
 
-  prismaMock.birthdayPerson.create({
-    data: birthdayPerson
-  })
+  const result = await CreateBirthdayPerson.execute(birthdayPerson)
 
-  await expect(method.save(birthdayPerson )).resolves.toEqual({
-    id: "0a9bf762-bd86-4e0f-b96f-e607467ea179",
-    name: 'Rich',
-    birth_date: "2000-02-11T13:03:05.279Z"
-  })
+  expect(result).toHaveProperty("id");
+  expect(result.name).toBe("Birthday Person");
 })

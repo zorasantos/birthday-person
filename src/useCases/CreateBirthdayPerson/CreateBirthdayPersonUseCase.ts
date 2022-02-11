@@ -7,8 +7,10 @@ export class CreateBirthdayPersonUseCase {
   constructor(
     private birthdayPersonRepository: IBirthdayPersonRepository
   ) {}
+
   async execute(data: ICreateBirthdayPersonRequestDTO) {
-    const birthdayPerson = new BirthdayPerson(data);
-    return await this.birthdayPersonRepository.save(birthdayPerson);
+    const birthdayPersonCreate = BirthdayPerson.create(data);
+    const result = await this.birthdayPersonRepository.save(birthdayPersonCreate);
+    return result
   }
 }
