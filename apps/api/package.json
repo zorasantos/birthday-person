@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "tsnd --transpile-only --respawn --ignore-watch node_modules src/server.ts",
+    "docker:db": "docker-compose up -d",
     "test": "jest"
   },
   "devDependencies": {

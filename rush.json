@@ -392,6 +392,10 @@
     {
       "packageName": "prisma-project",
       "projectFolder": "apps/api"
+    },
+    {
+      "packageName": "client",
+      "projectFolder": "apps/client"
     }
     // {
     //   /**
