@@ -396,6 +396,10 @@
     {
       "packageName": "client",
       "projectFolder": "apps/client"
+    },
+    {
+      "packageName": "@shared/tsconfig",
+      "projectFolder": "packages/tsconfig"
     }
     // {
     //   /**
