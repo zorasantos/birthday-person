@@ -40,6 +40,16 @@
       "shellCommand": "commitlint --edit ''"
     },
     {
+      "name": "lint-staged",
+      "commandKind": "bulk",
+      "summary": "Run lint-staged on each package",
+      "description": "Iterates through each package in the monorepo and runs the 'lint-staged' script",
+      "enableParallelism": false,
+      "ignoreMissingScript": true,
+      "ignoreDependencyOrder": true,
+      "allowWarningsInSuccessfulBuild": true
+    },
+    {
       "name": "test",
       "commandKind": "bulk",
       "summary": "Run tests on each package",

@@ -18,7 +18,8 @@
     "jest-mock-extended": "2.0.4",
     "prisma": "^3.9.1",
     "@shared/tsconfig": "workspace:*",
-    "@shared/eslint-config": "workspace:*"
+    "@shared/eslint-config": "workspace:*",
+    "lint-staged": "^12.3.3"
   },
   "dependencies": {
     "@prisma/client": "3.9.1",
@@ -28,5 +29,11 @@
   "peerDependencies": {
     "typescript": "^4.0.0",
     "ts-node": "^9.1.1"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "yarn lint",
+      "yarn run test --findRelatedTests --watchAll=false --silent"
+    ]
   }
 }
