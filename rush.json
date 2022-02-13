@@ -385,7 +385,7 @@
    */
   "projects": [
     {
-      "packageName": "prisma-project",
+      "packageName": "api",
       "projectFolder": "apps/api"
     },
     {
