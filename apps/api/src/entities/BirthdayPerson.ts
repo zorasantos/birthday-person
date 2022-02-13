@@ -4,6 +4,7 @@ class BirthdayPerson {
   public readonly id?: string;
 
   public name!: string;
+
   public birth_date!: Date;
 
   private constructor(props: Omit<BirthdayPerson, 'id'>, id?: string) {

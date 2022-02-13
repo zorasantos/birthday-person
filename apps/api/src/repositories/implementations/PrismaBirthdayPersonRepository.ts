@@ -1,7 +1,7 @@
 import { prismaClient } from '../../database/prismaClient';
 
 import { BirthdayPerson } from '../../entities/BirthdayPerson';
-import { IBirthdayPersonRepository } from '../../repositories/IBirthdayPersonRepository';
+import { IBirthdayPersonRepository } from '../IBirthdayPersonRepository';
 
 class PrismaBirthdayPersonRepository implements IBirthdayPersonRepository {
   async save(birthdayPerson: BirthdayPerson): Promise<BirthdayPerson> {

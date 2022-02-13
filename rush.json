@@ -395,6 +395,10 @@
     {
       "packageName": "@shared/tsconfig",
       "projectFolder": "packages/tsconfig"
+    },
+    {
+      "packageName": "@shared/eslint-config",
+      "projectFolder": "packages/eslint-config"
     }
     // {
     //   /**

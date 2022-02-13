@@ -22,6 +22,16 @@
       "ignoreDependencyOrder": true
     },
     {
+      "name": "lint",
+      "commandKind": "bulk",
+      "summary": "Run linter on each package",
+      "description": "Iterates through each package in the monorepo and runs the 'lint' script",
+      "enableParallelism": true,
+      "ignoreMissingScript": true,
+      "ignoreDependencyOrder": true,
+      "allowWarningsInSuccessfulBuild": false
+    },
+    {
       "name": "test",
       "commandKind": "bulk",
       "summary": "Run tests on each package",

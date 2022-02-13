@@ -5,13 +5,16 @@
     "outDir": "dist",
     "strict": true,
     "lib": ["esnext"],
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
   },
   "ts-node": {
     "compilerOptions": {
       "module": "commonjs"
     }
-  },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules"]
+  }
 }
