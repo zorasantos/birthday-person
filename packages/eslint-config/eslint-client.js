@@ -11,6 +11,9 @@ module.exports = {
     },
     react: {
       version: 'detect'
+    },
+    next: {
+      rootDir: ['app/*/', 'packages/*/']
     }
   },
   extends: [

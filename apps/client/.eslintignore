@@ -2,3 +2,4 @@
 node_modules
 .next
 jest.config.js
+tailwind.config.js

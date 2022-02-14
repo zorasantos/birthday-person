@@ -399,6 +399,10 @@
     {
       "packageName": "@shared/eslint-config",
       "projectFolder": "packages/eslint-config"
+    },
+    {
+      "packageName": "@shared/ui",
+      "projectFolder": "packages/ui"
     }
     // {
     //   /**
