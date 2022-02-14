@@ -5,7 +5,9 @@ class BirthdayPerson {
 
   public name!: string;
 
-  public birth_date!: Date;
+  public cellphone!: string;
+
+  public birthDate!: Date;
 
   private constructor(props: Omit<BirthdayPerson, 'id'>, id?: string) {
     Object.assign(this, props);
@@ -14,8 +16,8 @@ class BirthdayPerson {
     }
   }
 
-  static create({ name, birth_date }: BirthdayPerson) {
-    const birthdayPerson = new BirthdayPerson({ name, birth_date });
+  static create({ name, birthDate, cellphone }: BirthdayPerson) {
+    const birthdayPerson = new BirthdayPerson({ name, birthDate, cellphone });
     return birthdayPerson;
   }
 }

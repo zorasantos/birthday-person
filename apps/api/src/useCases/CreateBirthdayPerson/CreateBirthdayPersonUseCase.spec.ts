@@ -14,7 +14,8 @@ beforeAll(() => {
 test('should create new birthday Person ', async () => {
   const birthdayPerson: BirthdayPerson = {
     name: 'Birthday Person',
-    birth_date: new Date()
+    cellphone: '85988888888',
+    birthDate: new Date()
   };
 
   const result = await CreateBirthdayPerson.execute(birthdayPerson);

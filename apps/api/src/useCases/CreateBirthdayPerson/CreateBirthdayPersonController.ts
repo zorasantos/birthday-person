@@ -5,15 +5,16 @@ class CreateBirthdayPersonController {
   constructor(private createBirthdayPersonUseCase: CreateBirthdayPersonUseCase) {}
 
   async handle(req: Request, res: Response): Promise<Response> {
-    const { name, birth_date } = req.body;
+    const { name, birthDate, cellphone } = req.body;
 
     try {
       await this.createBirthdayPersonUseCase.execute({
         name,
-        birth_date
+        birthDate,
+        cellphone
       });
 
-      return res.status(201).send({ name, birth_date });
+      return res.status(201).send({ name, birthDate, cellphone });
     } catch (err: unknown | any) {
       return res.status(400).json({
         message: err.message || 'Erro inesperado!'

@@ -8,7 +8,8 @@ class PrismaBirthdayPersonRepository implements IBirthdayPersonRepository {
     const birthdayPersonCreated = await prismaClient.birthdayPerson.create({
       data: {
         name: birthdayPerson.name,
-        birth_date: birthdayPerson.birth_date
+        birthDate: birthdayPerson.birthDate,
+        cellphone: birthdayPerson.cellphone
       }
     });
 

@@ -1,4 +1,5 @@
 export interface ICreateBirthdayPersonRequestDTO {
   name: string;
-  birth_date: Date;
+  birthDate: Date;
+  cellphone: string;
 }
