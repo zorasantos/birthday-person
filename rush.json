@@ -389,20 +389,12 @@
       "projectFolder": "apps/api"
     },
     {
-      "packageName": "client",
-      "projectFolder": "apps/client"
-    },
-    {
       "packageName": "@shared/tsconfig",
       "projectFolder": "packages/tsconfig"
     },
     {
       "packageName": "@shared/eslint-config",
       "projectFolder": "packages/eslint-config"
-    },
-    {
-      "packageName": "@shared/ui",
-      "projectFolder": "packages/ui"
     }
     // {
     //   /**
