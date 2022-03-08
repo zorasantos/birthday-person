@@ -5,10 +5,10 @@ name: Main workflow
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 # Jobs to carry out
 jobs:
   lint:
