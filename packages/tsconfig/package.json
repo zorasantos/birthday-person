@@ -5,6 +5,9 @@
   "files": [
     "node.json"
   ],
+  "scripts": {
+    "build": ""
+  },
   "devDependencies": {
     "@types/node": "^17.0.17",
     "ts-jest": "^27.1.3",
